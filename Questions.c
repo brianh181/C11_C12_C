@@ -24,13 +24,13 @@ void minMax(int *arr, int n, int *min, int *max) {
     //    }
     //}
 
-    int *ptr = arr;
-    for (int i = 1; i < n; i++) {
-        if (*(ptr + i) < *min) {
-            *min = *(ptr + i);
+    int *ptr;
+    for (ptr = &arr[0]; ptr < &arr[n]; ptr++) {
+        if (*ptr < *min) {
+            *min = *ptr;
         }
-        if (*(ptr + i) > *max) {
-            *max = *(ptr + i);
+        if (*ptr > *max) {
+            *max = *ptr;
         }
     }
 
